@@ -9,13 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Globalization;
 
 namespace HotAndSpicy.Controllers
 {
     class MainWindowController
     {
         private MainWindowViewModel mViewModel;
-        private ObservableCollection<Chili> chiliList;
+        public ObservableCollection<Chili> chiliList { get; set; }
         private ObservableCollection<Plant> plantList;
         private ObservableCollection<Harvest> harvestList;
 
@@ -155,24 +156,102 @@ namespace HotAndSpicy.Controllers
             return chiliList;
         }
 
+        
+        public void Einpflanzen(object obj)
+        {
+
+            Plant Model = new Plant();
+            createID(Model);
+            Model.refId = mViewModel.SelectedChili.id;
+            Model.sowingDate = "";
+            Model.outdoorsDate = "";
+            Model.comment = "";
+            mViewModel.Plants.Add(Model);
+            
+        }
+
+        public void createID(Plant Model)
+        {
+            ObservableCollection<Chili> list = new ObservableCollection<Chili>();
+            string xmlString = System.IO.File.ReadAllText("MainData.xml");
+            XmlReader reader = XmlReader.Create(new StringReader(xmlString));
+
+
+            while (reader.Read())
+            {
+                if (reader.Name == "ChiliModel" && reader.NodeType == XmlNodeType.Element)
+                {
+                    Chili chili = new Chili();
+                    reader.ReadToFollowing("ID");
+                    chili.id = Int32.Parse(reader.ReadInnerXml());
+
+                    list.Add(chili);
+                }
+            }
+
+            int max = 0;
+            foreach (Chili elem in list)
+            {
+                if (max < elem.id)
+                {
+                    max = elem.id;
+                }
+            }
+            Model.id = max + 1;
+        }
 
 
         private bool DeletecommandCanExecute(object obj)
         {
-            return mViewModel.SelectedChili != null;
+            return (mViewModel.SelectedChili != null && mViewModel.SelectedChili.inUse != "true");
         }
 
         private void DeleteCommandExecute(object obj)
         {
-            if (mViewModel.SelectedChili != null)
-                mViewModel.Chilis.Remove(mViewModel.SelectedChili);
+            if (mViewModel.SelectedChili != null && mViewModel.SelectedChili.inUse != "true")
+            {
+                string xmlString = System.IO.File.ReadAllText("MainData.xml");
+                XmlReader reader = XmlReader.Create(new StringReader(xmlString));
+                while (reader.Read())
+                {
+                    if (reader.Name == "ChiliModel" && reader.NodeType == XmlNodeType.Element)
+                    {
+                        ///
+                        /// Delete the Object in XML
+                        ///
+                    }
+
+                    mViewModel.Chilis.Remove(mViewModel.SelectedChili);
+                }
+            }
         }
 
         private void AddCommandExecute(object obj)
         {
             var addedObject = new WindowAddController().AddChili();
+            ///
+            /// Add the Object in XML
+            ///
             if (addedObject != null)
             { mViewModel.Chilis.Add(addedObject); }
+        }
+
+        public void AddPlant(object obj)
+        {
+            var addedObject = new WindowAddController().AddPlant();
+            ///
+            /// Add the Object in XML
+            ///
+            if(addedObject != null)
+            { mViewModel.Plants.Add(addedObject); }
+        }
+
+        public void DeletePlant(object obj)
+        {
+            if(mViewModel.SelectedPlant != null)
+            {
+                mViewModel.Plants.Remove(mViewModel.SelectedPlant);
+            }
         }
     }
 }

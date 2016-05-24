@@ -36,8 +36,9 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <StackPanel Grid.Row="1" Orientation="Horizontal">
-                        <Button Content="Hinzufügen" Margin="5" Width="100" Command="{Binding AddCommand}" />
-                        <Button Content="Entfernen" Margin="5" Width="100" Command="{Binding DeleteCommand}" />
+                        <Button Content="Hinzufügen" Margin="5" Width="100" Command="{Binding AddPlant}" />
+                        <Button Content="Entfernen" Margin="5" Width="100" Command="{Binding DeletePlant}" />
+                        <Button Content="Diese Chili einpflanzen" Margin="5" Width="152" Command="{Binding Einpflanzen}" />
                     </StackPanel>
                 </Grid>
             </TabItem>
@@ -61,6 +62,10 @@
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <Button Content="Hinzufügen" Margin="5" Width="100" Command="{Binding AddCommand}" />
+                        <Button Content="Entfernen" Margin="5" Width="100" Command="{Binding DeleteCommand}" />
+                    </StackPanel>
                 </Grid>
             </TabItem>
             <!--TabItem Erntevorgänge-->
@@ -81,6 +86,10 @@
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <Button Content="Hinzufügen" Margin="5" Width="100" Command="{Binding AddPlant}" />
+                        <Button Content="Entfernen" Margin="5" Width="100" Command="{Binding DeletePlant}" />
+                    </StackPanel>
                 </Grid>
             </TabItem>
         </TabControl>

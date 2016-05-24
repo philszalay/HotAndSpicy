@@ -11,9 +11,42 @@ namespace HotAndSpicy.ViewModels
 {
     class WindowAddViewModel : ViewModelBase
     {
-        public Chili Model = new Chili(0, "Name", "sowingMonth", "severityLevel", "outdoorAfter", "true");
+        public Chili Model { get; internal set; }
         public ICommand OkCommand { get; set; }
         public ICommand CancelCommand { get; set; }
+
+        public string[] months
+        {
+            get
+            {
+                List<String> months = new List<string>();
+                months.Add("Januar");
+                months.Add("Februar");
+                months.Add("März");
+                months.Add("April");
+                months.Add("Mai");
+                months.Add("Juni");
+                months.Add("Juli");
+                months.Add("August");
+                months.Add("September");
+                months.Add("Oktober");
+                months.Add("November");
+                months.Add("Dezember");
+
+                return months.ToArray();
+            }
+        }
+
+        public string[] hybrid
+        {
+            get
+            {
+                List<String> hybrid = new List<string>();
+                hybrid.Add("true");
+                hybrid.Add("false");
+                return hybrid.ToArray();
+            }
+        }
 
         public int id
         {
@@ -99,6 +132,7 @@ namespace HotAndSpicy.ViewModels
             }
         }
 
-        public Chili Chili { get; internal set; }
+
+
     }
 }

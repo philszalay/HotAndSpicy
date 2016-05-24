@@ -21,19 +21,22 @@
         </Grid.RowDefinitions>
 
         <Label  Grid.Row="0" Content="Name:" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" />
-        <TextBox  Grid.Row="1" Grid.Column="2" Text="{Binding name}" Margin="0,5,5,5" />
+        <TextBox  Grid.Row="0" Grid.Column="2" Text="{Binding name}" Margin="0,5,5,5" />
 
         <Label  Grid.Row="1" Content="Sowing Month:" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" />
-        <TextBox  Grid.Row="2" Grid.Column="2" Text="{Binding sowingMonth}" Margin="0,5,5,5" />
+        <ComboBox ItemsSource="{Binding months}" Grid.Row="1" Grid.Column="2" SelectedItem="{Binding sowingMonth}" Margin="0,5,5,5">
+
+        </ComboBox>
 
         <Label  Grid.Row="2" Content="Severity Level:" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" />
-        <TextBox  Grid.Row="3" Grid.Column="2" Text="{Binding severityLevel}" Margin="0,5,5,5" />
+        <TextBox  Grid.Row="2" Grid.Column="2" Text="{Binding severityLevel}" Margin="0,5,5,5" />
 
         <Label  Grid.Row="3" Content="Outdoor After:" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" />
-        <TextBox  Grid.Row="4" Grid.Column="2" Text="{Binding outdoorAfter}" Margin="0,5,5,5" />
+        <TextBox  Grid.Row="3" Grid.Column="2" Text="{Binding outdoorAfter}" Margin="0,5,5,5" />
 
         <Label  Grid.Row="4" Content="Hybrid Seed:" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" />
-        <TextBox  Grid.Row="5" Grid.Column="2" Text="{Binding hybridSeed}" Margin="0,5,5,5" />
+        <ComboBox Grid.Row="4" Grid.Column="2" SelectedItem="{Binding hybridSeed}" ItemsSource="{Binding hybrid}" Margin="0,5,5,5">
+        </ComboBox>
 
         <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,31,0,-31">
             <Button Content="OK" Width="100" Margin="5" Command="{Binding OkCommand}" />

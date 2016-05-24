@@ -61,6 +61,8 @@
     <Compile Include="Framework\ViewModelBase.cs" />
     <Compile Include="Models\Harvest.cs" />
     <Compile Include="Models\Plant.cs" />
+    <Compile Include="ViewModels\HarvestAddViewModel.cs" />
+    <Compile Include="ViewModels\PlantAddViewModel.cs" />
     <Compile Include="Views\WindowAdd.xaml.cs">
       <DependentUpon>WindowAdd.xaml</DependentUpon>
     </Compile>
