@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <MainDataModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Stock>
     <ChiliModel>
@@ -765,7 +765,7 @@
   <RealPlants>
     <RealPlantModel>
       <ID>1</ID>
-      <RefID>0</RefID>
+      <RefID>3</RefID>
       <SowingDate>2016-03-15T08:33:35.1178823+01:00</SowingDate>
       <OutdoorsDate>2016-03-15T08:33:35.1178823+01:00</OutdoorsDate>
       <Comment>Wächst nicht so gut.</Comment>
@@ -782,7 +782,7 @@
     </RealPlantModel>
     <RealPlantModel>
       <ID>55</ID>
-      <RefID>0</RefID>
+      <RefID>1</RefID>
       <SowingDate>2016-03-15T08:33:35.1178823+01:00</SowingDate>
       <OutdoorsDate>2016-03-15T08:33:35.1178823+01:00</OutdoorsDate>
       <Comment>Wächst gut.</Comment>

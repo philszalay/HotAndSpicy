@@ -14,3 +14,19 @@ c:\users\phil szalay\documents\visual studio 2015\Projects\HotAndSpicy\HotAndSpi
 c:\users\phil szalay\documents\visual studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\HotAndSpicy.pdb
 c:\users\phil szalay\documents\visual studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\Views\WindowAdd.g.cs
 c:\users\phil szalay\documents\visual studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\Views\WindowAdd.baml
+C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\bin\Debug\HotAndSpicy.exe.config
+C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\HotAndSpicy.exe
+C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\HotAndSpicy.pdb
+C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\bin\Debug\HotAndSpicy.exe
+C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\bin\Debug\HotAndSpicy.pdb
+C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\HotAndSpicy.csprojResolveAssemblyReference.cache
+C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\Views\MainWindow.g.cs
+C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\Views\WindowAdd.g.cs
+C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\App.g.cs
+C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\HotAndSpicy_MarkupCompile.cache
+C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\HotAndSpicy_MarkupCompile.lref
+C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\Views\MainWindow.baml
+C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\Views\WindowAdd.baml
+C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\HotAndSpicy.g.resources
+C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\HotAndSpicy.Properties.Resources.resources
+C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\HotAndSpicy.csproj.GenerateResource.Cache

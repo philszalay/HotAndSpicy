@@ -86,6 +86,9 @@ namespace HotAndSpicy.Controllers
                     reader.ReadToFollowing("ID");
                     plant.id = Int32.Parse(reader.ReadInnerXml());
 
+                    reader.ReadToFollowing("RefID");
+                    plant.refId = Int32.Parse(reader.ReadInnerXml());
+
                     /// Sets "inUse" bool of the current plant to true
                     var used = chiliList.Where(x => x.id == plant.refId);
 
@@ -93,9 +96,6 @@ namespace HotAndSpicy.Controllers
                     {
                         chili.inUse = "true";
                     }   
-
-                    reader.ReadToFollowing("RefID");
-                    plant.refId = Int32.Parse(reader.ReadInnerXml());
 
                     reader.ReadToFollowing("SowingDate");
                     plant.sowingDate = reader.ReadInnerXml();
