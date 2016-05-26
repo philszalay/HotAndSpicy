@@ -26,6 +26,8 @@ namespace HotAndSpicy.ViewModels
         public ICommand HarvestPlant { get; internal set; }
         public ICommand EditPlant { get; internal set; }
         public ICommand EditCommand { get; internal set; }
+        public ICommand DeleteHarvest { get; internal set; }
+
 
 
         public ObservableCollection<Chili> Chilis

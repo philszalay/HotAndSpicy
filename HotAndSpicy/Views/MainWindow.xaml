@@ -90,7 +90,7 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <StackPanel Grid.Row="1" Orientation="Horizontal">
-                        <Button Content="Entfernen" Margin="5" Width="100" Command="{Binding DeletePlant}" />
+                        <Button Content="Entfernen" Margin="5" Width="100" Command="{Binding DeleteHarvest}" />
                     </StackPanel>
                 </Grid>
             </TabItem>

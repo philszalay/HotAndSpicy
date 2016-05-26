@@ -56,13 +56,16 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controllers\MainWindowController.cs" />
+    <Compile Include="Controllers\PlantAddWindowController.cs" />
     <Compile Include="Controllers\WindowAddController.cs" />
     <Compile Include="Framework\RelayCommand.cs" />
     <Compile Include="Framework\ViewModelBase.cs" />
     <Compile Include="Models\Harvest.cs" />
     <Compile Include="Models\Plant.cs" />
-    <Compile Include="ViewModels\HarvestAddViewModel.cs" />
     <Compile Include="ViewModels\PlantAddViewModel.cs" />
+    <Compile Include="Views\PlantAdd.xaml.cs">
+      <DependentUpon>PlantAdd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\WindowAdd.xaml.cs">
       <DependentUpon>WindowAdd.xaml</DependentUpon>
     </Compile>
@@ -81,6 +84,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\PlantAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\WindowAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

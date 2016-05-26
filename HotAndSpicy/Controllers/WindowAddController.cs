@@ -15,25 +15,6 @@ namespace HotAndSpicy.Controllers
     class WindowAddController
     {
         WindowAdd mView;
-
-        /*public Plant AddPlant()
-        {
-            ///mView = new PlantAdd();
-            PlantAddViewModel mViewModel = new PlantAddViewModel
-            {
-                Model = new Plant(),
-                OkCommand = new RelayCommand(ExecuteOkCommand),
-                CancelCommand = new RelayCommand(ExecuteCancelCommand)
-            };
-            mView.DataContext = mViewModel;
-            if(mView.ShowDialog() == true)
-            {
-                return mViewModel.Model;
-            } else
-            {
-                return null;
-            }
-        }*/
             
         
 

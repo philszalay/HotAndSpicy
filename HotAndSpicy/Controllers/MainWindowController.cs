@@ -31,7 +31,8 @@ namespace HotAndSpicy.Controllers
                 Harvest = readHarvestXML(),
 
                 HarvestPlant = new RelayCommand(HarvestPlant),
-                ///EditPlant = new RelayCommand(EditPlant),
+                DeleteHarvest = new RelayCommand(DeleteHarvest, CanDeleteHarvest),
+                EditPlant = new RelayCommand(EditPlant),
                 EditCommand = new RelayCommand(EditCommand),
                 Einpflanzen = new RelayCommand(Einpflanzen),
                 DeletePlant = new RelayCommand(DeletePlant, CanDeletePlant),
@@ -40,6 +41,37 @@ namespace HotAndSpicy.Controllers
             };
             view.DataContext = mViewModel;
             view.ShowDialog();
+        }
+
+        private bool CanDeleteHarvest(object obj)
+        {
+            return true;
+        }
+
+        private void DeleteHarvest(object obj)
+        {
+            ///
+            /// Delete also from XML file
+            ///
+            if (mViewModel.SelectedHarvest != null)
+            {
+                mViewModel.Harvest.Remove(mViewModel.SelectedHarvest);
+            }
+        }
+
+        private void EditPlant(object obj)
+        {
+            var addedObject = new PlantAddWindowController().AddPlant(mViewModel.SelectedPlant.id, mViewModel.SelectedPlant.refId, mViewModel.SelectedPlant.sowingDate, mViewModel.SelectedPlant.outdoorsDate, mViewModel.SelectedPlant.comment);
+
+            ///
+            /// Add item to XML
+            ///
+
+            if (addedObject != null)
+            {
+                mViewModel.Plants.Remove(mViewModel.SelectedPlant);
+                mViewModel.Plants.Add(addedObject);
+            }
         }
 
         private void EditCommand(object obj)

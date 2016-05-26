@@ -14,12 +14,17 @@ namespace HotAndSpicy.Models
         public string outdoorsDate { get; set; }
         public string comment { get; set; }
 
-        public Plant()
+        public Plant(int id, int refId, string sowingDate, string outdoorsDate, string comment)
         {
-
+            this.id = id;
+            this.refId = refId;
+            this.sowingDate = sowingDate;
+            this.outdoorsDate = outdoorsDate;
+            this.comment = comment;
         }
 
-
-
+        public Plant()
+        {
+        }
     }
 }

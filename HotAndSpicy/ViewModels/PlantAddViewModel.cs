@@ -39,7 +39,41 @@ namespace HotAndSpicy.ViewModels
             }
         }
 
+        public string sowingDate
+        {
+            get { return Model.sowingDate; }
+            set
+            {
+                if (Model.sowingDate == value)
+                    return;
+                Model.sowingDate = value;
+                OnPropertyChanged("sowingDate");
+            }
+        }
 
+        public string outdoorsDate
+        {
+            get { return Model.outdoorsDate; }
+            set
+            {
+                if (Model.outdoorsDate == value)
+                    return;
+                Model.outdoorsDate = value;
+                OnPropertyChanged("outdoorsDate");
+            }
+        }
+
+        public string comment
+        {
+            get { return Model.comment; }
+            set
+            {
+                if (Model.comment == value)
+                    return;
+                Model.comment = value;
+                OnPropertyChanged("comment");
+            }
+        }
 
     }
 }

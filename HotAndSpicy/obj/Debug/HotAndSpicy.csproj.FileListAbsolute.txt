@@ -30,3 +30,5 @@ C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpi
 C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\HotAndSpicy.g.resources
 C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\HotAndSpicy.Properties.Resources.resources
 C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\HotAndSpicy.csproj.GenerateResource.Cache
+C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\Views\PlantAdd.g.cs
+C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\Views\PlantAdd.baml
