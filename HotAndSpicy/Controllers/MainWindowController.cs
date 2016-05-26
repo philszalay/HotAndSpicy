@@ -15,14 +15,15 @@ namespace HotAndSpicy.Controllers
 {
     class MainWindowController
     {
+        private MainWindow view;
         private MainWindowViewModel mViewModel;
         public ObservableCollection<Chili> chiliList { get; set; }
-        private ObservableCollection<Plant> plantList;
-        private ObservableCollection<Harvest> harvestList;
+        private ObservableCollection<Plant> plantList { get; set; }
+        private ObservableCollection<Harvest> harvestList { get; set; }
 
         public void Initialize()
         {
-            var view = new MainWindow();
+            view = new MainWindow();
 
             mViewModel = new MainWindowViewModel
             {
@@ -56,6 +57,8 @@ namespace HotAndSpicy.Controllers
             if (mViewModel.SelectedHarvest != null)
             {
                 mViewModel.Harvest.Remove(mViewModel.SelectedHarvest);
+
+                update();
             }
         }
 
@@ -71,6 +74,8 @@ namespace HotAndSpicy.Controllers
             {
                 mViewModel.Plants.Remove(mViewModel.SelectedPlant);
                 mViewModel.Plants.Add(addedObject);
+
+                update();
             }
         }
 
@@ -84,7 +89,10 @@ namespace HotAndSpicy.Controllers
             if (addedObject != null)
             {
                 mViewModel.Chilis.Remove(mViewModel.SelectedChili);
-                mViewModel.Chilis.Add(addedObject); }
+                mViewModel.Chilis.Add(addedObject);
+
+                update();
+            }
         }
 
         private void HarvestPlant(object obj)
@@ -95,6 +103,8 @@ namespace HotAndSpicy.Controllers
             Model.date = DateTime.Now.ToString(); 
            
             mViewModel.Harvest.Add(Model);
+
+            update();
         }
 
        
@@ -127,7 +137,7 @@ namespace HotAndSpicy.Controllers
                     harvest.date = reader.ReadInnerXml();
 
                     reader.ReadToFollowing("Amount");
-                    harvest.ammount = Int32.Parse(reader.ReadInnerXml());
+                    harvest.amount = Int32.Parse(reader.ReadInnerXml());
 
                     harvestList.Add(harvest);
                 }
@@ -234,6 +244,8 @@ namespace HotAndSpicy.Controllers
             Model.outdoorsDate = "";
             Model.comment = "";
             mViewModel.Plants.Add(Model);
+
+            update();
             
         }
 
@@ -277,20 +289,11 @@ namespace HotAndSpicy.Controllers
         {
             if (mViewModel.SelectedChili != null && mViewModel.SelectedChili.inUse != "true")
             {
-                string xmlString = System.IO.File.ReadAllText("MainData.xml");
-                XmlReader reader = XmlReader.Create(new StringReader(xmlString));
-                while (reader.Read())
-                {
-                    if (reader.Name == "ChiliModel" && reader.NodeType == XmlNodeType.Element)
-                    {
-                        ///
-                        /// Delete the Object in XML
-                        ///
-                    }
+                mViewModel.Chilis.Remove(mViewModel.SelectedChili);
 
-                    mViewModel.Chilis.Remove(mViewModel.SelectedChili);
-                }
+                update();
             }
+            
         }
 
         private void AddCommandExecute(object obj)
@@ -300,7 +303,11 @@ namespace HotAndSpicy.Controllers
             /// Add the Object in XML
             ///
             if (addedObject != null)
-            { mViewModel.Chilis.Add(addedObject); }
+            {
+                mViewModel.Chilis.Add(addedObject);
+
+                update();
+            }
         }
 
         /*public void AddPlant(object obj)
@@ -318,7 +325,116 @@ namespace HotAndSpicy.Controllers
             if(mViewModel.SelectedPlant != null)
             {
                 mViewModel.Plants.Remove(mViewModel.SelectedPlant);
+
+                update();
             }
+        }
+
+        /// <summary>
+        /// Method for saving the data in XML and refreshing the tables.
+        /// </summary>
+        public void update()
+        {
+            ///
+            /// Insert method for creating new XML file here.
+            ///
+            File.Delete("MainData.xml");
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Indent = true;
+            settings.Encoding = System.Text.Encoding.UTF8;
+
+            using (XmlWriter writer = XmlWriter.Create("MainData.xml", settings))
+            {
+                writer.WriteStartElement("Stock");
+
+                foreach(Chili chili in chiliList)
+                {
+                    writer.WriteStartElement("ChiliModel");
+
+                    writer.WriteStartElement("ID");
+                    writer.WriteString(chili.id.ToString());
+                    writer.WriteEndElement();
+
+                    writer.WriteStartElement("Name");
+                    writer.WriteString(chili.name);
+                    writer.WriteEndElement();
+
+                    writer.WriteStartElement("SowingMonth");
+                    writer.WriteString(chili.sowingMonth);
+                    writer.WriteEndElement();
+
+                    writer.WriteStartElement("SeverityLevel");
+                    writer.WriteString(chili.severityLevel);
+                    writer.WriteEndElement();
+
+                    writer.WriteStartElement("OutdoorsAfter");
+                    writer.WriteString(chili.outdoorsAfter);
+                    writer.WriteEndElement();
+
+                    writer.WriteStartElement("HybridSeed");
+                    writer.WriteString(chili.hybridSeed);
+                    writer.WriteEndElement();
+
+                    writer.WriteEndElement();
+                }
+
+                /// end "Stock"
+                writer.WriteEndElement();
+
+                writer.WriteStartElement("RealPlants");
+
+                foreach (Plant plant in plantList)
+                {
+                    writer.WriteStartElement("RealPlantModel");
+
+                    writer.WriteStartElement("ID");
+                    writer.WriteString(plant.id.ToString());
+                    writer.WriteEndElement();
+
+                    writer.WriteStartElement("RefID");
+                    writer.WriteString(plant.refId.ToString());
+                    writer.WriteEndElement();
+
+                    writer.WriteStartElement("SowingDate");
+                    writer.WriteString(plant.sowingDate);
+                    writer.WriteEndElement();
+
+                    writer.WriteStartElement("OutdoorsDate");
+                    writer.WriteString(plant.outdoorsDate);
+                    writer.WriteEndElement();
+
+                    writer.WriteStartElement("Comment");
+                    writer.WriteString(plant.comment);
+                    writer.WriteEndElement();
+
+                    writer.WriteEndElement();
+                }
+
+                writer.WriteEndElement();
+
+                foreach (Harvest harvest in harvestList)
+                {
+                    writer.WriteStartElement("HarvestData");
+
+                    writer.WriteStartElement("Date");
+                    writer.WriteString(harvest.date);
+                    writer.WriteEndElement();
+
+                    writer.WriteStartElement("Amount");
+                    writer.WriteString(harvest.amount.ToString());
+                    writer.WriteEndElement();
+
+                    writer.WriteEndElement();
+                }
+
+                writer.WriteEndDocument();
+
+                writer.Close();
+            }
+
+            /// DAS GEHT SO NICHT!!
+            view.Hide();
+            Initialize();
         }
     }
 }
