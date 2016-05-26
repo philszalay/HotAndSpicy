@@ -16,7 +16,7 @@ namespace HotAndSpicy.Controllers
     {
         WindowAdd mView;
 
-        public Plant AddPlant()
+        /*public Plant AddPlant()
         {
             ///mView = new PlantAdd();
             PlantAddViewModel mViewModel = new PlantAddViewModel
@@ -33,7 +33,7 @@ namespace HotAndSpicy.Controllers
             {
                 return null;
             }
-        }
+        }*/
             
         
 
@@ -56,6 +56,30 @@ namespace HotAndSpicy.Controllers
                 /// set inUse default value false
                 mViewModel.Model.inUse = "false";
 
+                return mViewModel.Model;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public Chili AddChili(int id, string name, string sowingMonth, string severityLevel, string outdoorsAfter, string hybridSeed, string inUse)
+        {
+            mView = new WindowAdd();
+            WindowAddViewModel mViewModel = new WindowAddViewModel
+            {
+                Model = new Chili(id, name, sowingMonth, severityLevel, outdoorsAfter, hybridSeed, inUse),
+                OkCommand = new RelayCommand(ExecuteOkCommand),
+                CancelCommand = new RelayCommand(ExecuteCancelCommand)
+            };
+
+            mViewModel.Model.id = id;
+
+            mView.DataContext = mViewModel;
+            if (mView.ShowDialog() == true)
+            {
+ 
                 return mViewModel.Model;
             }
             else

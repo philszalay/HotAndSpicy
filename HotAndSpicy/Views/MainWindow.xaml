@@ -8,10 +8,11 @@
         Title="Hot And Spicy" Height="360" Width="540">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="185*"/>
-            <ColumnDefinition Width="332*"/>
+            <ColumnDefinition Width="115*"/>
+            <ColumnDefinition Width="76*"/>
+            <ColumnDefinition Width="342*"/>
         </Grid.ColumnDefinitions>
-        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="320" VerticalAlignment="Top" Width="517" Grid.ColumnSpan="2">
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="320" VerticalAlignment="Top" Width="517" Grid.ColumnSpan="3">
             <!--TabItem Chilisorten-->
             <TabItem Header="Chillisorten">
                 <Grid Background="#FFE5E5E5" Margin="0,0,0,-5">
@@ -36,8 +37,9 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <StackPanel Grid.Row="1" Orientation="Horizontal">
-                        <Button Content="Hinzufügen" Margin="5" Width="100" Command="{Binding AddPlant}" />
-                        <Button Content="Entfernen" Margin="5" Width="100" Command="{Binding DeletePlant}" />
+                        <Button Content="Hinzufügen" Margin="5" Width="100" Command="{Binding AddCommand}" />
+                        <Button Content="Bearbeiten" Margin="5" Width="100" Command="{Binding EditCommand}" />
+                        <Button Content="Entfernen" Margin="5" Width="100" Command="{Binding DeleteCommand}" />
                         <Button Content="Diese Chili einpflanzen" Margin="5" Width="152" Command="{Binding Einpflanzen}" />
                     </StackPanel>
                 </Grid>
@@ -63,8 +65,9 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <StackPanel Grid.Row="1" Orientation="Horizontal">
-                        <Button Content="Hinzufügen" Margin="5" Width="100" Command="{Binding AddCommand}" />
-                        <Button Content="Entfernen" Margin="5" Width="100" Command="{Binding DeleteCommand}" />
+                        <Button Content="Entfernen" Margin="5" Width="100" Command="{Binding DeletePlant}" />
+                        <Button Content="Ernten" Margin="5" Width="100"  Command="{Binding HarvestPlant}" RenderTransformOrigin="-10.35,0.567"/>
+                        <Button Content="Bearbeiten" Margin="5" Width="100" Command="{Binding EditPlant}"/>
                     </StackPanel>
                 </Grid>
             </TabItem>
@@ -87,7 +90,6 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <StackPanel Grid.Row="1" Orientation="Horizontal">
-                        <Button Content="Hinzufügen" Margin="5" Width="100" Command="{Binding AddPlant}" />
                         <Button Content="Entfernen" Margin="5" Width="100" Command="{Binding DeletePlant}" />
                     </StackPanel>
                 </Grid>

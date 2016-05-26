@@ -29,11 +29,46 @@ namespace HotAndSpicy.Controllers
                 Chilis = readChiliXML(),
                 Plants = readPlantsXML(),
                 Harvest = readHarvestXML(),
+
+                HarvestPlant = new RelayCommand(HarvestPlant),
+                ///EditPlant = new RelayCommand(EditPlant),
+                EditCommand = new RelayCommand(EditCommand),
+                Einpflanzen = new RelayCommand(Einpflanzen),
+                DeletePlant = new RelayCommand(DeletePlant, CanDeletePlant),
                 AddCommand = new RelayCommand(AddCommandExecute),
                 DeleteCommand = new RelayCommand(DeleteCommandExecute, DeletecommandCanExecute)
             };
             view.DataContext = mViewModel;
             view.ShowDialog();
+        }
+
+        private void EditCommand(object obj)
+        {
+            var addedObject = new WindowAddController().AddChili(mViewModel.SelectedChili.id, mViewModel.SelectedChili.name, mViewModel.SelectedChili.sowingMonth, mViewModel.SelectedChili.severityLevel, mViewModel.SelectedChili.outdoorsAfter, mViewModel.SelectedChili.hybridSeed, mViewModel.SelectedChili.inUse);
+            ///
+            /// Add the Object in XML
+            ///
+
+            if (addedObject != null)
+            {
+                mViewModel.Chilis.Remove(mViewModel.SelectedChili);
+                mViewModel.Chilis.Add(addedObject); }
+        }
+
+        private void HarvestPlant(object obj)
+        {
+            Harvest Model = new Harvest();
+            Model.refId = mViewModel.SelectedPlant.refId;
+            ///Model.ammount = 1;
+            Model.date = DateTime.Now.ToString(); 
+           
+            mViewModel.Harvest.Add(Model);
+        }
+
+       
+        private bool CanDeletePlant(object obj)
+        {
+            return true;
         }
 
 
@@ -236,7 +271,7 @@ namespace HotAndSpicy.Controllers
             { mViewModel.Chilis.Add(addedObject); }
         }
 
-        public void AddPlant(object obj)
+        /*public void AddPlant(object obj)
         {
             var addedObject = new WindowAddController().AddPlant();
             ///
@@ -244,7 +279,7 @@ namespace HotAndSpicy.Controllers
             ///
             if(addedObject != null)
             { mViewModel.Plants.Add(addedObject); }
-        }
+        }*/
 
         public void DeletePlant(object obj)
         {

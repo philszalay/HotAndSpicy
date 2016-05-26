@@ -22,7 +22,7 @@ namespace HotAndSpicy.Models
         }
 
 
-        public Chili(int id, string name, string sowingMonth, string severityLevel, string outdoorsAfter, string hybridSeed)
+        public Chili(int id, string name, string sowingMonth, string severityLevel, string outdoorsAfter, string hybridSeed, string inUse)
         {
             this.id = id;
             this.name = name;
@@ -30,7 +30,9 @@ namespace HotAndSpicy.Models
             this.severityLevel = severityLevel;
             this.outdoorsAfter = outdoorsAfter;
             this.hybridSeed = hybridSeed;
-            this.inUse = "false";
+            this.inUse = inUse;
         }
+
+
     }
 }
