@@ -59,6 +59,8 @@ namespace HotAndSpicy.Controllers
                 mViewModel.Harvest.Remove(mViewModel.SelectedHarvest);
 
                 update();
+
+                view.end();
             }
         }
 
@@ -76,6 +78,8 @@ namespace HotAndSpicy.Controllers
                 mViewModel.Plants.Add(addedObject);
 
                 update();
+
+                view.end();
             }
         }
 
@@ -92,6 +96,8 @@ namespace HotAndSpicy.Controllers
                 mViewModel.Chilis.Add(addedObject);
 
                 update();
+
+                view.end();
             }
         }
 
@@ -99,15 +105,17 @@ namespace HotAndSpicy.Controllers
         {
             Harvest Model = new Harvest();
             Model.refId = mViewModel.SelectedPlant.refId;
-            ///Model.ammount = 1;
+            Model.amount = 1;
             Model.date = DateTime.Now.ToString(); 
            
             mViewModel.Harvest.Add(Model);
 
             update();
+
+            view.end();
         }
 
-       
+
         private bool CanDeletePlant(object obj)
         {
             return true;
@@ -126,7 +134,7 @@ namespace HotAndSpicy.Controllers
 
             while (reader.Read())
             {
-                if(reader.Name == "RealPlantModel" && reader.NodeType == XmlNodeType.Element)
+                if(reader.Name == "HarvestData" && reader.NodeType == XmlNodeType.Element)
                 {
                     Harvest harvest = new Harvest();
 
@@ -246,7 +254,8 @@ namespace HotAndSpicy.Controllers
             mViewModel.Plants.Add(Model);
 
             update();
-            
+
+            view.end();
         }
 
         public void createID(Plant Model)
@@ -292,6 +301,8 @@ namespace HotAndSpicy.Controllers
                 mViewModel.Chilis.Remove(mViewModel.SelectedChili);
 
                 update();
+
+                view.end();
             }
             
         }
@@ -307,6 +318,8 @@ namespace HotAndSpicy.Controllers
                 mViewModel.Chilis.Add(addedObject);
 
                 update();
+
+                view.end();
             }
         }
 
@@ -327,6 +340,8 @@ namespace HotAndSpicy.Controllers
                 mViewModel.Plants.Remove(mViewModel.SelectedPlant);
 
                 update();
+
+                view.end();
             }
         }
 
@@ -345,9 +360,11 @@ namespace HotAndSpicy.Controllers
 
             using (XmlWriter writer = XmlWriter.Create("MainData.xml", settings))
             {
+                writer.WriteStartDocument();
+                writer.WriteStartElement("Content");
                 writer.WriteStartElement("Stock");
 
-                foreach(Chili chili in chiliList)
+                foreach (Chili chili in chiliList)
                 {
                     writer.WriteStartElement("ChiliModel");
 
@@ -375,6 +392,7 @@ namespace HotAndSpicy.Controllers
                     writer.WriteString(chili.hybridSeed);
                     writer.WriteEndElement();
 
+                    /// end "ChiliModel"
                     writer.WriteEndElement();
                 }
 
@@ -407,14 +425,20 @@ namespace HotAndSpicy.Controllers
                     writer.WriteString(plant.comment);
                     writer.WriteEndElement();
 
+                    /// end "RealPlantModel"
                     writer.WriteEndElement();
                 }
 
+                /// end "RealPlants"
                 writer.WriteEndElement();
 
                 foreach (Harvest harvest in harvestList)
                 {
                     writer.WriteStartElement("HarvestData");
+
+                    writer.WriteStartElement("RefID");
+                    writer.WriteString(harvest.refId.ToString());
+                    writer.WriteEndElement();
 
                     writer.WriteStartElement("Date");
                     writer.WriteString(harvest.date);
@@ -424,8 +448,11 @@ namespace HotAndSpicy.Controllers
                     writer.WriteString(harvest.amount.ToString());
                     writer.WriteEndElement();
 
+                    /// end "HarvestData"
                     writer.WriteEndElement();
                 }
+
+                writer.WriteEndElement();
 
                 writer.WriteEndDocument();
 
@@ -434,6 +461,7 @@ namespace HotAndSpicy.Controllers
 
             /// DAS GEHT SO NICHT!!
             view.Hide();
+            ///
             Initialize();
         }
     }

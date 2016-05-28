@@ -20,9 +20,24 @@ namespace HotAndSpicy
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
         }
+
+        public void end()
+        {
+            System.Threading.Thread.Sleep(1);
+            Close();
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+
+            Application.Current.Shutdown();
+        }
+
     }
 }
