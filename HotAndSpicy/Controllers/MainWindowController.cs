@@ -42,9 +42,9 @@ namespace HotAndSpicy.Controllers
                 DeleteCommand = new RelayCommand(DeleteCommandExecute, DeletecommandCanExecute)
             };
 
-            outdoor();
             view.DataContext = mViewModel;
-            view.ShowDialog();
+            view.ShowDialog();            outdoor();
+
         }
 
         private bool CanDeleteHarvest(object obj)
@@ -378,9 +378,6 @@ namespace HotAndSpicy.Controllers
         /// </summary>
         public void update()
         {
-            ///
-            /// Insert method for creating new XML file here.
-            ///
             File.Delete("MainData.xml");
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = true;
@@ -395,7 +392,7 @@ namespace HotAndSpicy.Controllers
                 foreach (Chili chili in chiliList)
                 {
                     writer.WriteStartElement("ChiliModel");
-
+ 
                     writer.WriteStartElement("ID");
                     writer.WriteString(chili.id.ToString());
                     writer.WriteEndElement();
