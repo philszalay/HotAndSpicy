@@ -32,3 +32,21 @@ C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpi
 C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\HotAndSpicy.csproj.GenerateResource.Cache
 C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\Views\PlantAdd.g.cs
 C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\Views\PlantAdd.baml
+C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\bin\Debug\HotAndSpicy.exe.config
+C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\obj\Debug\HotAndSpicy.exe
+C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\obj\Debug\HotAndSpicy.pdb
+C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\bin\Debug\HotAndSpicy.exe
+C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\bin\Debug\HotAndSpicy.pdb
+C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\obj\Debug\HotAndSpicy.csprojResolveAssemblyReference.cache
+C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\obj\Debug\Views\MainWindow.g.cs
+C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\obj\Debug\Views\PlantAdd.g.cs
+C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\obj\Debug\Views\WindowAdd.g.cs
+C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\obj\Debug\App.g.cs
+C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\obj\Debug\HotAndSpicy_MarkupCompile.cache
+C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\obj\Debug\HotAndSpicy_MarkupCompile.lref
+C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\obj\Debug\Views\MainWindow.baml
+C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\obj\Debug\Views\PlantAdd.baml
+C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\obj\Debug\Views\WindowAdd.baml
+C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\obj\Debug\HotAndSpicy.g.resources
+C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\obj\Debug\HotAndSpicy.Properties.Resources.resources
+C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\obj\Debug\HotAndSpicy.csproj.GenerateResource.Cache

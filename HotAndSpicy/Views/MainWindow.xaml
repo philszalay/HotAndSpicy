@@ -26,11 +26,11 @@
                                 <StackPanel Margin="0, 0, 0, 20">
                                     <TextBlock Text= "{Binding id, StringFormat=ID: {0}}"/>
                                     <TextBlock Text="{Binding name, StringFormat=Name: {0}}"/>
-                                    <TextBlock Text="{Binding sowingMonth, StringFormat=Sowing Month: {0} }"/>
-                                    <TextBlock Text="{Binding severityLevel, StringFormat=Severity Level: {0}}"/>
-                                    <TextBlock Text="{Binding outdoorsAfter, StringFormat=Outdoors After: {0}}"/>
-                                    <TextBlock Text="{Binding hybridSeed, StringFormat=Hybrid Seed: {0}}"/>
-                                    <TextBlock Text= "{Binding inUse, StringFormat=In Use: {0}}"/>
+                                    <TextBlock Text="{Binding sowingMonth, StringFormat=Aussaatdatum: {0} }"/>
+                                    <TextBlock Text="{Binding severityLevel, StringFormat=Schärfegrad: {0}}"/>
+                                    <TextBlock Text="{Binding outdoorsAfter, StringFormat=Outdoor ab: {0}}"/>
+                                    <TextBlock Text="{Binding hybridSeed, StringFormat=Hybrid Samen: {0}}"/>
+                                    <TextBlock Text= "{Binding inUse, StringFormat=Wird benutzt: {0}}"/>
                                     <TextBlock Text="" />
                                 </StackPanel>
                             </DataTemplate>
@@ -57,9 +57,9 @@
                                 <StackPanel Margin="0,0, 0, 20">
                                     <TextBlock Text= "{Binding id, StringFormat=ID: {0}}"/>
                                     <TextBlock Text= "{Binding refId, StringFormat=RefID: {0}}"/>
-                                    <TextBlock Text= "{Binding sowingDate, StringFormat=Sowing Date: {0}}"/>
-                                    <TextBlock Text= "{Binding outdoorsDate, StringFormat=Outdoors Date: {0}}"/>
-                                    <TextBlock Text= "{Binding comment, StringFormat=Comment: {0}}"/>
+                                    <TextBlock Text= "{Binding sowingDate, StringFormat=Aussaatdatum: {0}}"/>
+                                    <TextBlock Text= "{Binding outdoorsDate, StringFormat=Outdoor ab: {0}}"/>
+                                    <TextBlock Text= "{Binding comment, StringFormat=Kommentar: {0}}"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
@@ -83,8 +83,8 @@
                             <DataTemplate>
                                 <StackPanel Margin="0,0, 0, 20">
                                     <TextBlock Text= "{Binding refId, StringFormat=RefID: {0}}"/>
-                                    <TextBlock Text= "{Binding date, StringFormat=Date: {0}}"/>
-                                    <TextBlock Text= "{Binding ammount, StringFormat=Ammount: {0}}"/>
+                                    <TextBlock Text= "{Binding date, StringFormat=Datum: {0}}"/>
+                                    <TextBlock Text= "{Binding amount, StringFormat=Menge: {0}}"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
