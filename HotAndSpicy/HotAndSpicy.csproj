@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controllers\HarvestAddWindowController.cs" />
     <Compile Include="Controllers\MainWindowController.cs" />
     <Compile Include="Controllers\PlantAddWindowController.cs" />
     <Compile Include="Controllers\WindowAddController.cs" />
@@ -62,13 +63,21 @@
     <Compile Include="Framework\ViewModelBase.cs" />
     <Compile Include="Models\Harvest.cs" />
     <Compile Include="Models\Plant.cs" />
+    <Compile Include="ViewModels\HarvestAddViewModel.cs" />
     <Compile Include="ViewModels\PlantAddViewModel.cs" />
+    <Compile Include="Views\HarvestAdd.xaml.cs">
+      <DependentUpon>HarvestAdd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PlantAdd.xaml.cs">
       <DependentUpon>PlantAdd.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WindowAdd.xaml.cs">
       <DependentUpon>WindowAdd.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\HarvestAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

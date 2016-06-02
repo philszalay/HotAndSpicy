@@ -39,7 +39,7 @@ namespace HotAndSpicy.ViewModels
             }
         }
 
-        public string sowingDate
+        public DateTime sowingDate
         {
             get { return Model.sowingDate; }
             set
@@ -51,7 +51,7 @@ namespace HotAndSpicy.ViewModels
             }
         }
 
-        public string outdoorsDate
+        public DateTime outdoorsDate
         {
             get { return Model.outdoorsDate; }
             set

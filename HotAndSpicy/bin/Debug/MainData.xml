@@ -2,6 +2,46 @@
 <Content>
   <Stock>
     <ChiliModel>
+      <ID>1</ID>
+      <Name>Afghan Short</Name>
+      <SowingMonth>Februar</SowingMonth>
+      <SeverityLevel>10</SeverityLevel>
+      <OutdoorsAfter>120</OutdoorsAfter>
+      <HybridSeed>true</HybridSeed>
+    </ChiliModel>
+    <ChiliModel>
+      <ID>2</ID>
+      <Name>Alma Paprika</Name>
+      <SowingMonth>März</SowingMonth>
+      <SeverityLevel>5</SeverityLevel>
+      <OutdoorsAfter>90</OutdoorsAfter>
+      <HybridSeed>true</HybridSeed>
+    </ChiliModel>
+    <ChiliModel>
+      <ID>3</ID>
+      <Name>Anaheim, New Mexican</Name>
+      <SowingMonth>Januar</SowingMonth>
+      <SeverityLevel>6</SeverityLevel>
+      <OutdoorsAfter>60</OutdoorsAfter>
+      <HybridSeed>false</HybridSeed>
+    </ChiliModel>
+    <ChiliModel>
+      <ID>4</ID>
+      <Name>Aurora</Name>
+      <SowingMonth>April</SowingMonth>
+      <SeverityLevel>2</SeverityLevel>
+      <OutdoorsAfter>60</OutdoorsAfter>
+      <HybridSeed>false</HybridSeed>
+    </ChiliModel>
+    <ChiliModel>
+      <ID>5</ID>
+      <Name>Ancho</Name>
+      <SowingMonth>Februar</SowingMonth>
+      <SeverityLevel>4</SeverityLevel>
+      <OutdoorsAfter>55</OutdoorsAfter>
+      <HybridSeed>false</HybridSeed>
+    </ChiliModel>
+    <ChiliModel>
       <ID>6</ID>
       <Name>Beaver Dam</Name>
       <SowingMonth>März</SowingMonth>
@@ -106,6 +146,14 @@
       <HybridSeed>false</HybridSeed>
     </ChiliModel>
     <ChiliModel>
+      <ID>19</ID>
+      <Name>Elefantenrüssel</Name>
+      <SowingMonth>Januar</SowingMonth>
+      <SeverityLevel>6</SeverityLevel>
+      <OutdoorsAfter>55</OutdoorsAfter>
+      <HybridSeed>false</HybridSeed>
+    </ChiliModel>
+    <ChiliModel>
       <ID>20</ID>
       <Name>Fish Pepper</Name>
       <SowingMonth>April</SowingMonth>
@@ -135,6 +183,22 @@
       <SowingMonth>Januar</SowingMonth>
       <SeverityLevel>9</SeverityLevel>
       <OutdoorsAfter>90</OutdoorsAfter>
+      <HybridSeed>true</HybridSeed>
+    </ChiliModel>
+    <ChiliModel>
+      <ID>24</ID>
+      <Name>Hot Wax</Name>
+      <SowingMonth>April</SowingMonth>
+      <SeverityLevel>7</SeverityLevel>
+      <OutdoorsAfter>60</OutdoorsAfter>
+      <HybridSeed>true</HybridSeed>
+    </ChiliModel>
+    <ChiliModel>
+      <ID>25</ID>
+      <Name>Hungarian Yellow Wax</Name>
+      <SowingMonth>Februar</SowingMonth>
+      <SeverityLevel>5</SeverityLevel>
+      <OutdoorsAfter>60</OutdoorsAfter>
       <HybridSeed>true</HybridSeed>
     </ChiliModel>
     <ChiliModel>
@@ -697,61 +761,31 @@
       <OutdoorsAfter>80</OutdoorsAfter>
       <HybridSeed>false</HybridSeed>
     </ChiliModel>
-    <ChiliModel>
-      <ID>1</ID>
-      <Name>Afghan Short</Name>
-      <SowingMonth>Juli</SowingMonth>
-      <SeverityLevel>565555555555</SeverityLevel>
-      <OutdoorsAfter>120</OutdoorsAfter>
-      <HybridSeed>true</HybridSeed>
-    </ChiliModel>
-    <ChiliModel>
-      <ID>3</ID>
-      <Name>Anaheim, New Mexican</Name>
-      <SowingMonth>Januar</SowingMonth>
-      <SeverityLevel>5000</SeverityLevel>
-      <OutdoorsAfter>60</OutdoorsAfter>
-      <HybridSeed>false</HybridSeed>
-    </ChiliModel>
   </Stock>
   <RealPlants>
     <RealPlantModel>
-      <ID>102</ID>
-      <RefID>32</RefID>
-      <SowingDate></SowingDate>
-      <OutdoorsDate></OutdoorsDate>
-      <Comment>schmeckt nicht lecker</Comment>
+      <ID>1</ID>
+      <RefID>3</RefID>
+      <SowingDate>3/15/2016 8:33:35 AM</SowingDate>
+      <OutdoorsDate>3/15/2016 8:33:35 AM</OutdoorsDate>
+      <Comment>Wächst nicht so gut.</Comment>
     </RealPlantModel>
     <RealPlantModel>
-      <ID>102</ID>
-      <RefID>6</RefID>
-      <SowingDate></SowingDate>
-      <OutdoorsDate></OutdoorsDate>
-      <Comment></Comment>
-    </RealPlantModel>
-    <RealPlantModel>
-      <ID>102</ID>
-      <RefID>7</RefID>
-      <SowingDate></SowingDate>
-      <OutdoorsDate></OutdoorsDate>
-      <Comment></Comment>
-    </RealPlantModel>
-    <RealPlantModel>
-      <ID>102</ID>
-      <RefID>7</RefID>
-      <SowingDate></SowingDate>
-      <OutdoorsDate></OutdoorsDate>
-      <Comment></Comment>
+      <ID>55</ID>
+      <RefID>1</RefID>
+      <SowingDate>3/15/2016 8:33:35 AM</SowingDate>
+      <OutdoorsDate>3/15/2016 8:33:35 AM</OutdoorsDate>
+      <Comment>Wächst gut.</Comment>
     </RealPlantModel>
   </RealPlants>
   <HarvestData>
-    <RefID>32</RefID>
-    <Date>30.05.2016 15:55:33</Date>
-    <Amount>1</Amount>
+    <RefID>1</RefID>
+    <Date>2016-03-15T08:33:35.0933774+01:00</Date>
+    <Amount>4</Amount>
   </HarvestData>
   <HarvestData>
-    <RefID>32</RefID>
-    <Date>30.05.2016 15:55:59</Date>
-    <Amount>1</Amount>
+    <RefID>1</RefID>
+    <Date>6/2/2016 7:09:39 PM</Date>
+    <Amount>0</Amount>
   </HarvestData>
 </Content>

@@ -1,0 +1,38 @@
+﻿<Window x:Class="HotAndSpicy.Views.HarvestAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HotAndSpicy.Views"
+        mc:Ignorable="d"
+        Title="HarvestAdd" Height="300" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+
+
+        <Label  Grid.Row="0" Content="RefID:" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" />
+        <TextBox  Grid.Row="0" Grid.Column="2" Text="{Binding getrefId}" Margin="0,5,5,5" />
+
+        <Label  Grid.Row="1" Content="Amount:" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" />
+        <TextBox  Grid.Row="1" Grid.Column="2" Text="{Binding getamount}" Margin="0,5,5,5" />
+
+        <Label  Grid.Row="2" Content="Erntedatum:" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" />
+        <TextBox  Grid.Row="2" Grid.Column="2" Text="{Binding getdate}" Margin="0,5,5,5" />
+
+        <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,31,0,-31">
+            <Button Content="OK" Width="100" Margin="5" Command="{Binding OkCommand}" />
+            <Button Content="Abbrechen" Width="100" Margin="5" Command="{Binding CancelCommand}" />
+        </StackPanel>
+    </Grid>
+</Window>

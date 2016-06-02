@@ -99,16 +99,18 @@ namespace HotAndSpicy.Controllers
 
                     list.Add(chili);
                 }
-            }
 
-            int max = 0;
-            foreach (Chili elem in list){
-                if(max < elem.id)
+
+                int max = 0;
+                foreach (Chili elem in list)
                 {
-                    max = elem.id;
+                    if (max < elem.id)
+                    {
+                        max = elem.id;
+                    }
                 }
+                Model.id = max + 1;
             }
-            Model.id = max + 1;
         }
     }
 }

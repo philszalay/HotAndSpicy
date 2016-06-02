@@ -10,11 +10,11 @@ namespace HotAndSpicy.Models
     {
         public int id { get; set; }
         public int refId { get; set; }
-        public string sowingDate { get; set; }
-        public string outdoorsDate { get; set; }
+        public DateTime sowingDate { get; set; }
+        public DateTime outdoorsDate { get; set; }
         public string comment { get; set; }
 
-        public Plant(int id, int refId, string sowingDate, string outdoorsDate, string comment)
+        public Plant(int id, int refId, DateTime sowingDate, DateTime outdoorsDate, string comment)
         {
             this.id = id;
             this.refId = refId;

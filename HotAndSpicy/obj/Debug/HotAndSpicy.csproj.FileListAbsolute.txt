@@ -50,3 +50,5 @@ C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\obj\Debug\Views\WindowAdd.baml
 C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\obj\Debug\HotAndSpicy.g.resources
 C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\obj\Debug\HotAndSpicy.Properties.Resources.resources
 C:\Users\Phil Szalay\Desktop\88888\HotAndSpicy\obj\Debug\HotAndSpicy.csproj.GenerateResource.Cache
+C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\Views\HarvestAdd.g.cs
+C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\obj\Debug\Views\HarvestAdd.baml

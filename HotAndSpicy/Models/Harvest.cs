@@ -16,5 +16,12 @@ namespace HotAndSpicy.Models
         {
 
         }
+
+        public Harvest(int amount ,string date,int refId)
+        {
+            this.date = date;
+            this.amount = amount;
+            this.refId = refId;
+        }
     }
 }

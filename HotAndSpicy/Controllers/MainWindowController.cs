@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Globalization;
+using System.Windows;
 
 namespace HotAndSpicy.Controllers
 {
@@ -40,6 +41,8 @@ namespace HotAndSpicy.Controllers
                 AddCommand = new RelayCommand(AddCommandExecute),
                 DeleteCommand = new RelayCommand(DeleteCommandExecute, DeletecommandCanExecute)
             };
+
+            outdoor();
             view.DataContext = mViewModel;
             view.ShowDialog();
         }
@@ -56,63 +59,76 @@ namespace HotAndSpicy.Controllers
             ///
             if (mViewModel.SelectedHarvest != null)
             {
-                mViewModel.Harvest.Remove(mViewModel.SelectedHarvest);
+                var addedObject = new HarvestAddWindowController().AddHarvest(mViewModel.SelectedHarvest.amount, mViewModel.SelectedHarvest.date, mViewModel.SelectedHarvest.refId);
 
-                update();
+                if (addedObject != null)
+                {
+                    mViewModel.Harvest.Remove(mViewModel.SelectedHarvest);
+                    mViewModel.Harvest.Add(addedObject);
 
-                view.end();
+                    update();
+
+                    view.end();
+                }
             }
         }
 
         private void EditPlant(object obj)
         {
-            var addedObject = new PlantAddWindowController().AddPlant(mViewModel.SelectedPlant.id, mViewModel.SelectedPlant.refId, mViewModel.SelectedPlant.sowingDate, mViewModel.SelectedPlant.outdoorsDate, mViewModel.SelectedPlant.comment);
-
-            ///
-            /// Add item to XML
-            ///
-
-            if (addedObject != null)
+            if (mViewModel.SelectedPlant != null)
             {
-                mViewModel.Plants.Remove(mViewModel.SelectedPlant);
-                mViewModel.Plants.Add(addedObject);
+                var addedObject = new PlantAddWindowController().AddPlant(mViewModel.SelectedPlant.id, mViewModel.SelectedPlant.refId, mViewModel.SelectedPlant.sowingDate, mViewModel.SelectedPlant.outdoorsDate, mViewModel.SelectedPlant.comment);
 
-                update();
+                ///
+                /// Add item to XML
+                ///
 
-                view.end();
+                if (addedObject != null)
+                {
+                    mViewModel.Plants.Remove(mViewModel.SelectedPlant);
+                    mViewModel.Plants.Add(addedObject);
+
+                    update();
+
+                    view.end();
+                }
             }
         }
 
         private void EditCommand(object obj)
         {
-            var addedObject = new WindowAddController().AddChili(mViewModel.SelectedChili.id, mViewModel.SelectedChili.name, mViewModel.SelectedChili.sowingMonth, mViewModel.SelectedChili.severityLevel, mViewModel.SelectedChili.outdoorsAfter, mViewModel.SelectedChili.hybridSeed, mViewModel.SelectedChili.inUse);
-            ///
-            /// Add the Object in XML
-            ///
+            if(mViewModel.SelectedChili != null){
+                var addedObject = new WindowAddController().AddChili(mViewModel.SelectedChili.id, mViewModel.SelectedChili.name, mViewModel.SelectedChili.sowingMonth, mViewModel.SelectedChili.severityLevel, mViewModel.SelectedChili.outdoorsAfter, mViewModel.SelectedChili.hybridSeed, mViewModel.SelectedChili.inUse);
+                ///
+                /// Add the Object in XML
+                ///
 
-            if (addedObject != null)
-            {
-                mViewModel.Chilis.Remove(mViewModel.SelectedChili);
-                mViewModel.Chilis.Add(addedObject);
+                if (addedObject != null)
+                {
+                    mViewModel.Chilis.Remove(mViewModel.SelectedChili);
+                    mViewModel.Chilis.Add(addedObject);
 
-                update();
+                    update();
 
-                view.end();
+                    view.end();
+                }
             }
         }
 
         private void HarvestPlant(object obj)
         {
-            Harvest Model = new Harvest();
-            Model.refId = mViewModel.SelectedPlant.refId;
-            Model.amount = 1;
-            Model.date = DateTime.Now.ToString(); 
-           
-            mViewModel.Harvest.Add(Model);
+            if (mViewModel.SelectedPlant != null)
+            {
+                Harvest Model = new Harvest(0, DateTime.Now.ToString(), mViewModel.SelectedPlant.refId);
+                var addedObject = new HarvestAddWindowController().AddHarvest(Model.amount, Model.date, Model.refId);
 
-            update();
 
-            view.end();
+                mViewModel.Harvest.Add(Model);
+
+                update();
+
+                view.end();
+            }
         }
 
 
@@ -184,10 +200,10 @@ namespace HotAndSpicy.Controllers
                     }   
 
                     reader.ReadToFollowing("SowingDate");
-                    plant.sowingDate = reader.ReadInnerXml();
+                    plant.sowingDate = DateTime.Parse(reader.ReadInnerXml());
 
                     reader.ReadToFollowing("OutdoorsDate");
-                    plant.outdoorsDate = reader.ReadInnerXml();
+                    plant.outdoorsDate = DateTime.Parse(reader.ReadInnerXml());
 
                     reader.ReadToFollowing("Comment");
                     plant.comment = reader.ReadInnerXml();
@@ -241,51 +257,63 @@ namespace HotAndSpicy.Controllers
             return chiliList;
         }
 
-        
+
         public void Einpflanzen(object obj)
         {
+            if (mViewModel.SelectedChili != null)
+            {
+                Plant Model = new Plant();
+                Model.id = createID(Model);
+                Model.refId = mViewModel.SelectedChili.id;
+                Model.sowingDate = DateTime.Now;
+                System.TimeSpan time = new System.TimeSpan(Int32.Parse(mViewModel.SelectedChili.outdoorsAfter), 0, 0, 0);
+                Model.outdoorsDate = Model.sowingDate.Add(time);
+                Model.comment = "";
 
-            Plant Model = new Plant();
-            createID(Model);
-            Model.refId = mViewModel.SelectedChili.id;
-            Model.sowingDate = "";
-            Model.outdoorsDate = "";
-            Model.comment = "";
-            mViewModel.Plants.Add(Model);
+                var addedObject = new PlantAddWindowController().AddPlant(Model.id, Model.refId, Model.sowingDate, Model.outdoorsDate, Model.comment);
 
-            update();
+                ///
+                /// Add item to XML
+                ///
 
-            view.end();
+   
+                mViewModel.Plants.Add(addedObject);
+
+                update();
+
+                view.end();
+            }
         }
 
-        public void createID(Plant Model)
+        public int createID(Plant Model)
         {
-            ObservableCollection<Chili> list = new ObservableCollection<Chili>();
+            ObservableCollection<Plant> list = new ObservableCollection<Plant>();
             string xmlString = System.IO.File.ReadAllText("MainData.xml");
             XmlReader reader = XmlReader.Create(new StringReader(xmlString));
 
+            int max = 0;
 
             while (reader.Read())
             {
-                if (reader.Name == "ChiliModel" && reader.NodeType == XmlNodeType.Element)
+                if (reader.Name == "RealPlantModel" && reader.NodeType == XmlNodeType.Element)
                 {
-                    Chili chili = new Chili();
+                    Plant plant = new Plant();
                     reader.ReadToFollowing("ID");
-                    chili.id = Int32.Parse(reader.ReadInnerXml());
+                    plant.id = Int32.Parse(reader.ReadInnerXml());
 
-                    list.Add(chili);
+                    list.Add(plant);
                 }
-            }
 
-            int max = 0;
-            foreach (Chili elem in list)
-            {
-                if (max < elem.id)
+                foreach (Plant elem in list)
                 {
-                    max = elem.id;
+                    if (max < elem.id)
+                    {
+                        Console.WriteLine(max);
+                        max = elem.id;
+                    }
                 }
             }
-            Model.id = max + 1;
+            return max + 1;
         }
 
 
@@ -414,11 +442,11 @@ namespace HotAndSpicy.Controllers
                     writer.WriteEndElement();
 
                     writer.WriteStartElement("SowingDate");
-                    writer.WriteString(plant.sowingDate);
+                    writer.WriteString(plant.sowingDate.ToString());
                     writer.WriteEndElement();
 
                     writer.WriteStartElement("OutdoorsDate");
-                    writer.WriteString(plant.outdoorsDate);
+                    writer.WriteString(plant.outdoorsDate.ToString());
                     writer.WriteEndElement();
 
                     writer.WriteStartElement("Comment");
@@ -463,6 +491,17 @@ namespace HotAndSpicy.Controllers
             view.Hide();
             ///
             Initialize();
+        }
+
+        public void outdoor()
+        {
+            foreach (Plant testplant in plantList)
+            {
+                if (DateTime.Now >= testplant.outdoorsDate)
+                {
+                    MessageBox.Show("Die Pflanze mit der ID: " + testplant.id + "kann jetzt Outdoor angepflanzt werden");
+                }
+            }
         }
     }
 }

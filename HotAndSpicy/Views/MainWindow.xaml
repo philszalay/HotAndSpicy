@@ -4,15 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotAndSpicy"
+        WindowStartupLocation="Manual" Left="0" Top="0"
         mc:Ignorable="d"
-        Title="Hot And Spicy" Height="360" Width="540">
+        Title="Hot And Spicy" Height="650" Width="540">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="115*"/>
             <ColumnDefinition Width="76*"/>
-            <ColumnDefinition Width="342*"/>
+            <ColumnDefinition Width="59*"/>
+            <ColumnDefinition Width="282*"/>
         </Grid.ColumnDefinitions>
-        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="320" VerticalAlignment="Top" Width="517" Grid.ColumnSpan="3">
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="610" VerticalAlignment="Top" Width="517" Grid.ColumnSpan="4">
             <!--TabItem Chilisorten-->
             <TabItem Header="Chillisorten">
                 <Grid Background="#FFE5E5E5" Margin="0,0,0,-5">
@@ -72,7 +74,7 @@
                 </Grid>
             </TabItem>
             <!--TabItem Erntevorgänge-->
-            <TabItem Header="Erntevorgänge">
+            <TabItem Header="Ernten">
                 <Grid Background="#FFE5E5E5" Margin="0,0,0,-5">
                     <Grid.RowDefinitions>
                         <RowDefinition />
@@ -83,14 +85,14 @@
                             <DataTemplate>
                                 <StackPanel Margin="0,0, 0, 20">
                                     <TextBlock Text= "{Binding refId, StringFormat=RefID: {0}}"/>
-                                    <TextBlock Text= "{Binding date, StringFormat=Datum: {0}}"/>
+                                    <TextBlock Text= "{Binding date, StringFormat=Erntedatum: {0}}"/>
                                     <TextBlock Text= "{Binding amount, StringFormat=Menge: {0}}"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <StackPanel Grid.Row="1" Orientation="Horizontal">
-                        <Button Content="Entfernen" Margin="5" Width="100" Command="{Binding DeleteHarvest}" />
+                        <Button Content="Bearbeiten" Margin="5" Width="100" Command="{Binding DeleteHarvest}" />
                     </StackPanel>
                 </Grid>
             </TabItem>

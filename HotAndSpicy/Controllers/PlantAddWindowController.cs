@@ -49,7 +49,7 @@ namespace HotAndSpicy.Controllers
             mView.Close();
         }
 
-        public Plant AddPlant(int id, int refId, string sowingDate, string outdoorsDate, string comment)
+        public Plant AddPlant(int id, int refId, DateTime sowingDate, DateTime outdoorsDate, string comment)
         {
             mView = new PlantAdd();
             PlantAddViewModel mViewModel = new PlantAddViewModel
