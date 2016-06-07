@@ -17,7 +17,7 @@ namespace HotAndSpicy
         protected override void OnStartup(StartupEventArgs e)
         {
             MainWindowController Controller = new MainWindowController();
-            Controller.Initialize();
+            Controller.InitializeStartup();
         }
     }
 }

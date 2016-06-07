@@ -22,6 +22,31 @@ namespace HotAndSpicy.Controllers
         private ObservableCollection<Plant> plantList { get; set; }
         private ObservableCollection<Harvest> harvestList { get; set; }
 
+        public void InitializeStartup()
+        {
+            view = new MainWindow();
+
+            mViewModel = new MainWindowViewModel
+            {
+                Chilis = readChiliXML(),
+                Plants = readPlantsXML(),
+                Harvest = readHarvestXML(),
+
+                HarvestPlant = new RelayCommand(HarvestPlant),
+                DeleteHarvest = new RelayCommand(DeleteHarvest, CanDeleteHarvest),
+                EditPlant = new RelayCommand(EditPlant),
+                EditCommand = new RelayCommand(EditCommand),
+                Einpflanzen = new RelayCommand(Einpflanzen),
+                DeletePlant = new RelayCommand(DeletePlant, CanDeletePlant),
+                AddCommand = new RelayCommand(AddCommandExecute),
+                DeleteCommand = new RelayCommand(DeleteCommandExecute, DeletecommandCanExecute)
+            };
+
+            outdoor();
+            view.DataContext = mViewModel;
+            view.ShowDialog();
+        }
+
         public void Initialize()
         {
             view = new MainWindow();
@@ -43,8 +68,7 @@ namespace HotAndSpicy.Controllers
             };
 
             view.DataContext = mViewModel;
-            view.ShowDialog();            outdoor();
-
+            view.ShowDialog();
         }
 
         private bool CanDeleteHarvest(object obj)

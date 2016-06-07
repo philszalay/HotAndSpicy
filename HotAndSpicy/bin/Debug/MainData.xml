@@ -10,14 +10,6 @@
       <HybridSeed>true</HybridSeed>
     </ChiliModel>
     <ChiliModel>
-      <ID>2</ID>
-      <Name>Alma Paprika</Name>
-      <SowingMonth>März</SowingMonth>
-      <SeverityLevel>5</SeverityLevel>
-      <OutdoorsAfter>90</OutdoorsAfter>
-      <HybridSeed>true</HybridSeed>
-    </ChiliModel>
-    <ChiliModel>
       <ID>3</ID>
       <Name>Anaheim, New Mexican</Name>
       <SowingMonth>Januar</SowingMonth>
@@ -761,6 +753,14 @@
       <OutdoorsAfter>80</OutdoorsAfter>
       <HybridSeed>false</HybridSeed>
     </ChiliModel>
+    <ChiliModel>
+      <ID>102</ID>
+      <Name>dslkfds</Name>
+      <SowingMonth>Mai</SowingMonth>
+      <SeverityLevel>jklkj</SeverityLevel>
+      <OutdoorsAfter>kölköklk</OutdoorsAfter>
+      <HybridSeed>false</HybridSeed>
+    </ChiliModel>
   </Stock>
   <RealPlants>
     <RealPlantModel>
@@ -786,6 +786,11 @@
   <HarvestData>
     <RefID>1</RefID>
     <Date>6/2/2016 7:09:39 PM</Date>
+    <Amount>0</Amount>
+  </HarvestData>
+  <HarvestData>
+    <RefID>3</RefID>
+    <Date>6/7/2016 8:53:51 AM</Date>
     <Amount>0</Amount>
   </HarvestData>
 </Content>
