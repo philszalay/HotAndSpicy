@@ -19,9 +19,16 @@ namespace HotAndSpicy.Views
     /// </summary>
     public partial class XmlAdd : Window
     {
+        private WindowAdd mView;
+
         public XmlAdd()
         {
             InitializeComponent();
+        }
+
+        public XmlAdd(WindowAdd mView)
+        {
+            this.mView = mView;
         }
     }
 }

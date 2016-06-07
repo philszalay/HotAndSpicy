@@ -114,9 +114,23 @@ namespace HotAndSpicy.Controllers
             }
         }
 
+        private void readXml(object obj)
+        {
+
+        }
+
         private void Import(object obj)
         {
             xmlView = new XmlAdd();
+
+            XmlAddViewModel mViewModel = new XmlAddViewModel
+            {
+                CancelCommand = new RelayCommand(ExecuteCancelCommand),
+                readXml = new RelayCommand(readXml),
+            };
+
+            xmlView.DataContext = mViewModel;
+
             mView.Close();
             xmlView.ShowDialog();
         }

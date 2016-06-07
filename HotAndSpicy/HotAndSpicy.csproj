@@ -59,12 +59,14 @@
     <Compile Include="Controllers\MainWindowController.cs" />
     <Compile Include="Controllers\PlantAddWindowController.cs" />
     <Compile Include="Controllers\WindowAddController.cs" />
+    <Compile Include="Controllers\XmlAddController.cs" />
     <Compile Include="Framework\RelayCommand.cs" />
     <Compile Include="Framework\ViewModelBase.cs" />
     <Compile Include="Models\Harvest.cs" />
     <Compile Include="Models\Plant.cs" />
     <Compile Include="ViewModels\HarvestAddViewModel.cs" />
     <Compile Include="ViewModels\PlantAddViewModel.cs" />
+    <Compile Include="ViewModels\XmlAddViewModel.cs" />
     <Compile Include="Views\HarvestAdd.xaml.cs">
       <DependentUpon>HarvestAdd.xaml</DependentUpon>
     </Compile>

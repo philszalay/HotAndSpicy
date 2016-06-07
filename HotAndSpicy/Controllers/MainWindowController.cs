@@ -11,12 +11,14 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Globalization;
 using System.Windows;
+using HotAndSpicy.Views;
 
 namespace HotAndSpicy.Controllers
 {
     class MainWindowController
     {
         private MainWindow view;
+        private XmlAdd xmlView;
         private MainWindowViewModel mViewModel;
         public ObservableCollection<Chili> chiliList { get; set; }
         private ObservableCollection<Plant> plantList { get; set; }
@@ -39,7 +41,8 @@ namespace HotAndSpicy.Controllers
                 Einpflanzen = new RelayCommand(Einpflanzen),
                 DeletePlant = new RelayCommand(DeletePlant, CanDeletePlant),
                 AddCommand = new RelayCommand(AddCommandExecute),
-                DeleteCommand = new RelayCommand(DeleteCommandExecute, DeletecommandCanExecute)
+                DeleteCommand = new RelayCommand(DeleteCommandExecute, DeletecommandCanExecute),
+                Import = new RelayCommand(Import)
             };
 
             outdoor();
@@ -64,7 +67,8 @@ namespace HotAndSpicy.Controllers
                 Einpflanzen = new RelayCommand(Einpflanzen),
                 DeletePlant = new RelayCommand(DeletePlant, CanDeletePlant),
                 AddCommand = new RelayCommand(AddCommandExecute),
-                DeleteCommand = new RelayCommand(DeleteCommandExecute, DeletecommandCanExecute)
+                DeleteCommand = new RelayCommand(DeleteCommandExecute, DeletecommandCanExecute),
+                Import = new RelayCommand(Import)
             };
 
             view.DataContext = mViewModel;
@@ -281,6 +285,44 @@ namespace HotAndSpicy.Controllers
             return chiliList;
         }
 
+        private ObservableCollection<Chili> readChiliXML(string path)
+        {
+            string xmlString = System.IO.File.ReadAllText(path);
+            XmlReader reader = XmlReader.Create(new StringReader(xmlString));
+
+
+            while (reader.Read())
+            {
+                if (reader.Name == "Chili" && reader.NodeType == XmlNodeType.Element)
+                {
+                    Chili chili = new Chili();
+                    reader.ReadToFollowing("Name");
+                    chili.name = reader.ReadInnerXml();
+
+                    reader.ReadToFollowing("Saatmonat");
+                    chili.sowingMonth = reader.ReadInnerXml();
+
+                    reader.ReadToFollowing("Scharfegrad");
+                    chili.severityLevel = reader.ReadInnerXml();
+
+                    reader.ReadToFollowing("Freiland_nach");
+                    chili.outdoorsAfter = reader.ReadInnerXml();
+
+                    reader.ReadToFollowing("Hybridsamen");
+                    chili.hybridSeed = reader.ReadInnerXml();
+
+                    chili.inUse = "false";
+
+                    chili.id = createID(chili);
+
+
+                    chiliList.Add(chili);
+                }
+            }
+            return chiliList;
+        }
+        
+
 
         public void Einpflanzen(object obj)
         {
@@ -329,6 +371,37 @@ namespace HotAndSpicy.Controllers
                 }
 
                 foreach (Plant elem in list)
+                {
+                    if (max < elem.id)
+                    {
+                        Console.WriteLine(max);
+                        max = elem.id;
+                    }
+                }
+            }
+            return max + 1;
+        }
+
+        public int createID(Chili Model)
+        {
+            ObservableCollection<Chili> list = new ObservableCollection<Chili>();
+            string xmlString = System.IO.File.ReadAllText("MainData.xml");
+            XmlReader reader = XmlReader.Create(new StringReader(xmlString));
+
+            int max = 0;
+
+            while (reader.Read())
+            {
+                if (reader.Name == "ChiliModel" && reader.NodeType == XmlNodeType.Element)
+                {
+                    Chili chili = new Chili();
+                    reader.ReadToFollowing("ID");
+                    chili.id = Int32.Parse(reader.ReadInnerXml());
+
+                    list.Add(chili);
+                }
+
+                foreach (Chili elem in list)
                 {
                     if (max < elem.id)
                     {
@@ -523,6 +596,34 @@ namespace HotAndSpicy.Controllers
                     MessageBox.Show("Die Pflanze mit der ID: " + testplant.id + "kann jetzt Outdoor angepflanzt werden");
                 }
             }
+        }
+
+        private void Import(object obj)
+        {
+            xmlView = new XmlAdd();
+
+            XmlAddViewModel mViewModel = new XmlAddViewModel
+            {
+                readXml = new RelayCommand(readXml)
+            };
+
+            xmlView.DataContext = mViewModel;
+
+            xmlView.ShowDialog();
+        }
+
+        private void readXml(object obj)
+        {
+            xmlView.Close();
+
+            string a = @"C:\Users\anotheruser\Documents\Visual Studio 2015\Projects\HotAndSpicy\HotAndSpicy\bin\debug\Import";
+
+            foreach (string file in Directory.EnumerateFiles(a, "*.xml"))
+            {
+                readChiliXML(file);
+                System.IO.File.Delete(file);
+            }
+            update();
         }
     }
 }

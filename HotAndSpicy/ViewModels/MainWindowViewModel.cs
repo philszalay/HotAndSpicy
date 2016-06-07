@@ -27,6 +27,7 @@ namespace HotAndSpicy.ViewModels
         public ICommand EditPlant { get; internal set; }
         public ICommand EditCommand { get; internal set; }
         public ICommand DeleteHarvest { get; internal set; }
+        public ICommand Import { get; internal set; }
 
 
 
@@ -99,6 +100,21 @@ namespace HotAndSpicy.ViewModels
                     return;
                 _SelectedPlant = value;
                 OnPropertyChanged("Plants");
+            }
+        }
+
+        private string _pfad;
+
+        public string pfad
+        {
+            get { return _pfad; }
+            set
+            {
+                if (value != _pfad)
+                {
+                    _pfad = value;
+                    OnPropertyChanged("pfad");
+                }
             }
         }
 

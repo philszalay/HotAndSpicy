@@ -6,15 +6,17 @@
         xmlns:local="clr-namespace:HotAndSpicy"
         WindowStartupLocation="Manual" Left="0" Top="0"
         mc:Ignorable="d"
-        Title="Hot And Spicy" Height="650" Width="540">
-    <Grid>
+        Title="Hot And Spicy" Height="672" Width="714">
+    <Grid Margin="0,0,2,-20">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="115*"/>
-            <ColumnDefinition Width="76*"/>
-            <ColumnDefinition Width="59*"/>
-            <ColumnDefinition Width="282*"/>
+            <ColumnDefinition Width="158*"/>
+            <ColumnDefinition Width="104*"/>
+            <ColumnDefinition Width="81*"/>
+            <ColumnDefinition Width="67*"/>
+            <ColumnDefinition Width="204*"/>
+            <ColumnDefinition Width="116*"/>
         </Grid.ColumnDefinitions>
-        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="610" VerticalAlignment="Top" Width="517" Grid.ColumnSpan="4">
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="630" VerticalAlignment="Top" Width="696" Grid.ColumnSpan="6">
             <!--TabItem Chilisorten-->
             <TabItem Header="Chillisorten">
                 <Grid Background="#FFE5E5E5" Margin="0,0,0,-5">
@@ -22,7 +24,7 @@
                         <RowDefinition />
                         <RowDefinition Height="40" />
                     </Grid.RowDefinitions>
-                    <ListBox ItemsSource="{Binding Chilis}" SelectedItem="{Binding SelectedChili}">
+                    <ListBox ItemsSource="{Binding Chilis}" SelectedItem="{Binding SelectedChili}" Margin="0,0,0,10">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Margin="0, 0, 0, 20">
@@ -43,17 +45,25 @@
                         <Button Content="Bearbeiten" Margin="5" Width="100" Command="{Binding EditCommand}" />
                         <Button Content="Entfernen" Margin="5" Width="100" Command="{Binding DeleteCommand}" />
                         <Button Content="Diese Chili einpflanzen" Margin="5" Width="152" Command="{Binding Einpflanzen}" />
+                        <Button Content="XML Importieren" Margin="5" Width="152" Command="{Binding Import}" />
                     </StackPanel>
                 </Grid>
             </TabItem>
             <!--TabItem Eingepflanzte Chillis-->
             <TabItem Header="Eingepflanzte Chilis">
                 <Grid Background="#FFE5E5E5" Margin="0,0,0,-5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="16*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="18*"/>
+                        <ColumnDefinition Width="577*"/>
+                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition />
                         <RowDefinition Height="40" />
                     </Grid.RowDefinitions>
-                    <ListBox ItemsSource="{Binding Plants}" SelectedItem="{Binding SelectedPlant}">
+                    <ListBox ItemsSource="{Binding Plants}" SelectedItem="{Binding SelectedPlant}" Grid.ColumnSpan="5">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Margin="0,0, 0, 20">
@@ -66,7 +76,7 @@
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
-                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" Grid.ColumnSpan="5">
                         <Button Content="Entfernen" Margin="5" Width="100" Command="{Binding DeletePlant}" />
                         <Button Content="Ernten" Margin="5" Width="100"  Command="{Binding HarvestPlant}" RenderTransformOrigin="-10.35,0.567"/>
                         <Button Content="Bearbeiten" Margin="5" Width="100" Command="{Binding EditPlant}"/>

@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotAndSpicy.Views"
         mc:Ignorable="d"
-        Title="XmlAdd" Height="300" Width="300">
+        Title="XmlAdd" Height="146.154" Width="284.615">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal" Margin="88,46,-88,-46">
+            <Button Content="Jetzt Importieren" Width="100" Margin="5" Command="{Binding readXml}" />
+        </StackPanel>
+
     </Grid>
 </Window>
