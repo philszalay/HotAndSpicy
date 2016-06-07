@@ -1,6 +1,7 @@
 ﻿using HotAndSpicy.Framework;
 using HotAndSpicy.Models;
 using HotAndSpicy.ViewModels;
+using HotAndSpicy.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,8 +16,7 @@ namespace HotAndSpicy.Controllers
     class WindowAddController
     {
         WindowAdd mView;
-            
-        
+        XmlAdd xmlView;
 
         public Chili AddChili()
         {
@@ -111,6 +111,13 @@ namespace HotAndSpicy.Controllers
                 }
                 Model.id = max + 1;
             }
+        }
+
+        private void Import()
+        {
+            xmlView = new XmlAdd();
+
+            xmlView.ShowDialog();
         }
     }
 }

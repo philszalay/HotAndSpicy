@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotAndSpicy"
         mc:Ignorable="d"
-        Title="WindowAdd" Height="300" Width="300">
+        Title="WindowAdd" Height="300" Width="350">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100" />
@@ -41,6 +41,7 @@
         <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,31,0,-31">
             <Button Content="OK" Width="100" Margin="5" Command="{Binding OkCommand}" />
             <Button Content="Abbrechen" Width="100" Margin="5" Command="{Binding CancelCommand}" />
+            <Button Content="XML Importieren" Width="100" Margin="5" Command="{Binding Import}" />
         </StackPanel>
 
     </Grid>

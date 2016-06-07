@@ -74,6 +74,9 @@
     <Compile Include="Views\WindowAdd.xaml.cs">
       <DependentUpon>WindowAdd.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\XmlAdd.xaml.cs">
+      <DependentUpon>XmlAdd.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\HarvestAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -98,6 +101,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\WindowAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\XmlAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

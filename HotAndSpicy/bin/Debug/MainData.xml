@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Content>
+﻿<?xml version="1.0"?>
+<MainDataModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Stock>
     <ChiliModel>
       <ID>1</ID>
@@ -7,6 +7,14 @@
       <SowingMonth>Februar</SowingMonth>
       <SeverityLevel>10</SeverityLevel>
       <OutdoorsAfter>120</OutdoorsAfter>
+      <HybridSeed>true</HybridSeed>
+    </ChiliModel>
+    <ChiliModel>
+      <ID>2</ID>
+      <Name>Alma Paprika</Name>
+      <SowingMonth>März</SowingMonth>
+      <SeverityLevel>5</SeverityLevel>
+      <OutdoorsAfter>90</OutdoorsAfter>
       <HybridSeed>true</HybridSeed>
     </ChiliModel>
     <ChiliModel>
@@ -753,44 +761,41 @@
       <OutdoorsAfter>80</OutdoorsAfter>
       <HybridSeed>false</HybridSeed>
     </ChiliModel>
-    <ChiliModel>
-      <ID>102</ID>
-      <Name>dslkfds</Name>
-      <SowingMonth>Mai</SowingMonth>
-      <SeverityLevel>jklkj</SeverityLevel>
-      <OutdoorsAfter>kölköklk</OutdoorsAfter>
-      <HybridSeed>false</HybridSeed>
-    </ChiliModel>
   </Stock>
   <RealPlants>
     <RealPlantModel>
       <ID>1</ID>
       <RefID>3</RefID>
-      <SowingDate>3/15/2016 8:33:35 AM</SowingDate>
-      <OutdoorsDate>3/15/2016 8:33:35 AM</OutdoorsDate>
+      <SowingDate>2016-03-15T08:33:35.1178823+01:00</SowingDate>
+      <OutdoorsDate>2016-03-15T08:33:35.1178823+01:00</OutdoorsDate>
       <Comment>Wächst nicht so gut.</Comment>
+      <HarvestData>
+        <HarvestModel>
+          <Date>2016-03-15T08:33:35.0933774+01:00</Date>
+          <Amount>5</Amount>
+        </HarvestModel>
+        <HarvestModel>
+          <Date>2016-03-15T08:33:35.1178823+01:00</Date>
+          <Amount>20</Amount>
+        </HarvestModel>
+      </HarvestData>
     </RealPlantModel>
     <RealPlantModel>
       <ID>55</ID>
       <RefID>1</RefID>
-      <SowingDate>3/15/2016 8:33:35 AM</SowingDate>
-      <OutdoorsDate>3/15/2016 8:33:35 AM</OutdoorsDate>
+      <SowingDate>2016-03-15T08:33:35.1178823+01:00</SowingDate>
+      <OutdoorsDate>2016-03-15T08:33:35.1178823+01:00</OutdoorsDate>
       <Comment>Wächst gut.</Comment>
+      <HarvestData>
+        <HarvestModel>
+          <Date>2016-03-15T08:33:35.0933774+01:00</Date>
+          <Amount>4</Amount>
+        </HarvestModel>
+        <HarvestModel>
+          <Date>2016-03-15T08:33:35.1178823+01:00</Date>
+          <Amount>18</Amount>
+        </HarvestModel>
+      </HarvestData>
     </RealPlantModel>
   </RealPlants>
-  <HarvestData>
-    <RefID>1</RefID>
-    <Date>2016-03-15T08:33:35.0933774+01:00</Date>
-    <Amount>4</Amount>
-  </HarvestData>
-  <HarvestData>
-    <RefID>1</RefID>
-    <Date>6/2/2016 7:09:39 PM</Date>
-    <Amount>0</Amount>
-  </HarvestData>
-  <HarvestData>
-    <RefID>3</RefID>
-    <Date>6/7/2016 8:53:51 AM</Date>
-    <Amount>0</Amount>
-  </HarvestData>
-</Content>
+</MainDataModel>

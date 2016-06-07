@@ -14,6 +14,8 @@ namespace HotAndSpicy.ViewModels
         public Chili Model { get; internal set; }
         public ICommand OkCommand { get; set; }
         public ICommand CancelCommand { get; set; }
+        public ICommand Import { get; set; }
+
 
         public string[] months
         {
