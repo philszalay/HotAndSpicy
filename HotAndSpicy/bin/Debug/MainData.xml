@@ -1,6 +1,38 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Content>
+<?xml version="1.0"?>
+<MainDataModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Stock>
+    <ChiliModel>
+      <ID>1</ID>
+      <Name>Afghan Short</Name>
+      <SowingMonth>Februar</SowingMonth>
+      <SeverityLevel>10</SeverityLevel>
+      <OutdoorsAfter>120</OutdoorsAfter>
+      <HybridSeed>true</HybridSeed>
+    </ChiliModel>
+    <ChiliModel>
+      <ID>2</ID>
+      <Name>Alma Paprika</Name>
+      <SowingMonth>März</SowingMonth>
+      <SeverityLevel>5</SeverityLevel>
+      <OutdoorsAfter>90</OutdoorsAfter>
+      <HybridSeed>true</HybridSeed>
+    </ChiliModel>
+    <ChiliModel>
+      <ID>3</ID>
+      <Name>Anaheim, New Mexican</Name>
+      <SowingMonth>Januar</SowingMonth>
+      <SeverityLevel>6</SeverityLevel>
+      <OutdoorsAfter>60</OutdoorsAfter>
+      <HybridSeed>false</HybridSeed>
+    </ChiliModel>
+    <ChiliModel>
+      <ID>4</ID>
+      <Name>Aurora</Name>
+      <SowingMonth>April</SowingMonth>
+      <SeverityLevel>2</SeverityLevel>
+      <OutdoorsAfter>60</OutdoorsAfter>
+      <HybridSeed>false</HybridSeed>
+    </ChiliModel>
     <ChiliModel>
       <ID>5</ID>
       <Name>Ancho</Name>
@@ -12,7 +44,7 @@
     <ChiliModel>
       <ID>6</ID>
       <Name>Beaver Dam</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>8</SeverityLevel>
       <OutdoorsAfter>80</OutdoorsAfter>
       <HybridSeed>false</HybridSeed>
@@ -44,7 +76,7 @@
     <ChiliModel>
       <ID>10</ID>
       <Name>Bolivian Rainbow</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>6</SeverityLevel>
       <OutdoorsAfter>60</OutdoorsAfter>
       <HybridSeed>false</HybridSeed>
@@ -76,7 +108,7 @@
     <ChiliModel>
       <ID>14</ID>
       <Name>Chilaca</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>5</SeverityLevel>
       <OutdoorsAfter>110</OutdoorsAfter>
       <HybridSeed>false</HybridSeed>
@@ -108,14 +140,14 @@
     <ChiliModel>
       <ID>18</ID>
       <Name>Dutch Red</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>5</SeverityLevel>
       <OutdoorsAfter>60</OutdoorsAfter>
       <HybridSeed>false</HybridSeed>
     </ChiliModel>
     <ChiliModel>
       <ID>19</ID>
-      <Name>Elefantenr�ssel</Name>
+      <Name>Elefantenrüssel</Name>
       <SowingMonth>Januar</SowingMonth>
       <SeverityLevel>6</SeverityLevel>
       <OutdoorsAfter>55</OutdoorsAfter>
@@ -139,8 +171,8 @@
     </ChiliModel>
     <ChiliModel>
       <ID>22</ID>
-      <Name>F�szerpaprika</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <Name>Füszerpaprika</Name>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>8</SeverityLevel>
       <OutdoorsAfter>120</OutdoorsAfter>
       <HybridSeed>true</HybridSeed>
@@ -171,8 +203,8 @@
     </ChiliModel>
     <ChiliModel>
       <ID>26</ID>
-      <Name>Jalape�o</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <Name>Jalapeño</Name>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>6</SeverityLevel>
       <OutdoorsAfter>120</OutdoorsAfter>
       <HybridSeed>false</HybridSeed>
@@ -204,7 +236,7 @@
     <ChiliModel>
       <ID>30</ID>
       <Name>Mulato</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>5</SeverityLevel>
       <OutdoorsAfter>55</OutdoorsAfter>
       <HybridSeed>true</HybridSeed>
@@ -236,7 +268,7 @@
     <ChiliModel>
       <ID>34</ID>
       <Name>Pasilla</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>5</SeverityLevel>
       <OutdoorsAfter>90</OutdoorsAfter>
       <HybridSeed>false</HybridSeed>
@@ -259,7 +291,7 @@
     </ChiliModel>
     <ChiliModel>
       <ID>37</ID>
-      <Name>Piquant�</Name>
+      <Name>Piquanté</Name>
       <SowingMonth>Februar</SowingMonth>
       <SeverityLevel>4</SeverityLevel>
       <OutdoorsAfter>120</OutdoorsAfter>
@@ -268,7 +300,7 @@
     <ChiliModel>
       <ID>38</ID>
       <Name>Poblano</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>8</SeverityLevel>
       <OutdoorsAfter>90</OutdoorsAfter>
       <HybridSeed>false</HybridSeed>
@@ -299,15 +331,15 @@
     </ChiliModel>
     <ChiliModel>
       <ID>42</ID>
-      <Name>T�rkenkugel</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <Name>Türkenkugel</Name>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>6</SeverityLevel>
       <OutdoorsAfter>80</OutdoorsAfter>
       <HybridSeed>true</HybridSeed>
     </ChiliModel>
     <ChiliModel>
       <ID>43</ID>
-      <Name>Aj� Amarillo</Name>
+      <Name>Ají Amarillo</Name>
       <SowingMonth>Januar</SowingMonth>
       <SeverityLevel>2</SeverityLevel>
       <OutdoorsAfter>110</OutdoorsAfter>
@@ -315,7 +347,7 @@
     </ChiliModel>
     <ChiliModel>
       <ID>44</ID>
-      <Name>Aj� Brazilian Multicolor</Name>
+      <Name>Ají Brazilian Multicolor</Name>
       <SowingMonth>April</SowingMonth>
       <SeverityLevel>1</SeverityLevel>
       <OutdoorsAfter>120</OutdoorsAfter>
@@ -331,15 +363,15 @@
     </ChiliModel>
     <ChiliModel>
       <ID>46</ID>
-      <Name>Aj� Colorado</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <Name>Ají Colorado</Name>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>5</SeverityLevel>
       <OutdoorsAfter>60</OutdoorsAfter>
       <HybridSeed>true</HybridSeed>
     </ChiliModel>
     <ChiliModel>
       <ID>47</ID>
-      <Name>Aj� Escabeche</Name>
+      <Name>Ají Escabeche</Name>
       <SowingMonth>Januar</SowingMonth>
       <SeverityLevel>5</SeverityLevel>
       <OutdoorsAfter>60</OutdoorsAfter>
@@ -347,7 +379,7 @@
     </ChiliModel>
     <ChiliModel>
       <ID>48</ID>
-      <Name>Aj� Pineapple</Name>
+      <Name>Ají Pineapple</Name>
       <SowingMonth>April</SowingMonth>
       <SeverityLevel>3</SeverityLevel>
       <OutdoorsAfter>55</OutdoorsAfter>
@@ -364,7 +396,7 @@
     <ChiliModel>
       <ID>50</ID>
       <Name>Bishop's Crown</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>5</SeverityLevel>
       <OutdoorsAfter>110</OutdoorsAfter>
       <HybridSeed>false</HybridSeed>
@@ -396,7 +428,7 @@
     <ChiliModel>
       <ID>54</ID>
       <Name>Lemon Drop</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>8</SeverityLevel>
       <OutdoorsAfter>110</OutdoorsAfter>
       <HybridSeed>false</HybridSeed>
@@ -411,7 +443,7 @@
     </ChiliModel>
     <ChiliModel>
       <ID>56</ID>
-      <Name>Aj� Dulce</Name>
+      <Name>Ají Dulce</Name>
       <SowingMonth>April</SowingMonth>
       <SeverityLevel>7</SeverityLevel>
       <OutdoorsAfter>90</OutdoorsAfter>
@@ -419,7 +451,7 @@
     </ChiliModel>
     <ChiliModel>
       <ID>57</ID>
-      <Name>Aj� Limo</Name>
+      <Name>Ají Limo</Name>
       <SowingMonth>Februar</SowingMonth>
       <SeverityLevel>5</SeverityLevel>
       <OutdoorsAfter>120</OutdoorsAfter>
@@ -428,7 +460,7 @@
     <ChiliModel>
       <ID>58</ID>
       <Name>Adjuma</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>6</SeverityLevel>
       <OutdoorsAfter>90</OutdoorsAfter>
       <HybridSeed>false</HybridSeed>
@@ -460,7 +492,7 @@
     <ChiliModel>
       <ID>62</ID>
       <Name>Naga Jolokia</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>2</SeverityLevel>
       <OutdoorsAfter>80</OutdoorsAfter>
       <HybridSeed>false</HybridSeed>
@@ -484,7 +516,7 @@
     <ChiliModel>
       <ID>66</ID>
       <Name>Carolina Reaper</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>7</SeverityLevel>
       <OutdoorsAfter>60</OutdoorsAfter>
       <HybridSeed>false</HybridSeed>
@@ -500,7 +532,7 @@
     <ChiliModel>
       <ID>70</ID>
       <Name>Datil</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>1</SeverityLevel>
       <OutdoorsAfter>60</OutdoorsAfter>
       <HybridSeed>true</HybridSeed>
@@ -532,7 +564,7 @@
     <ChiliModel>
       <ID>74</ID>
       <Name>Habanero</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>3</SeverityLevel>
       <OutdoorsAfter>120</OutdoorsAfter>
       <HybridSeed>false</HybridSeed>
@@ -564,7 +596,7 @@
     <ChiliModel>
       <ID>78</ID>
       <Name>NuMex Suave</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>4</SeverityLevel>
       <OutdoorsAfter>55</OutdoorsAfter>
       <HybridSeed>true</HybridSeed>
@@ -588,7 +620,7 @@
     <ChiliModel>
       <ID>82</ID>
       <Name>Red Savina</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>2</SeverityLevel>
       <OutdoorsAfter>60</OutdoorsAfter>
       <HybridSeed>false</HybridSeed>
@@ -620,7 +652,7 @@
     <ChiliModel>
       <ID>86</ID>
       <Name>Trinidad Moruga Scorpion</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>7</SeverityLevel>
       <OutdoorsAfter>90</OutdoorsAfter>
       <HybridSeed>false</HybridSeed>
@@ -636,7 +668,7 @@
     <ChiliModel>
       <ID>90</ID>
       <Name>Yellow Bumpy</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>1</SeverityLevel>
       <OutdoorsAfter>80</OutdoorsAfter>
       <HybridSeed>true</HybridSeed>
@@ -651,7 +683,7 @@
     </ChiliModel>
     <ChiliModel>
       <ID>92</ID>
-      <Name>Aj� Chuncho</Name>
+      <Name>Ají Chuncho</Name>
       <SowingMonth>April</SowingMonth>
       <SeverityLevel>5</SeverityLevel>
       <OutdoorsAfter>120</OutdoorsAfter>
@@ -668,7 +700,7 @@
     <ChiliModel>
       <ID>94</ID>
       <Name>Indian PC-1</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>5</SeverityLevel>
       <OutdoorsAfter>60</OutdoorsAfter>
       <HybridSeed>true</HybridSeed>
@@ -700,7 +732,7 @@
     <ChiliModel>
       <ID>98</ID>
       <Name>Tabasco</Name>
-      <SowingMonth>M�rz</SowingMonth>
+      <SowingMonth>März</SowingMonth>
       <SeverityLevel>8</SeverityLevel>
       <OutdoorsAfter>60</OutdoorsAfter>
       <HybridSeed>false</HybridSeed>
@@ -734,26 +766,36 @@
     <RealPlantModel>
       <ID>1</ID>
       <RefID>3</RefID>
-      <SowingDate>3/15/2016 8:33:35 AM</SowingDate>
-      <OutdoorsDate>3/15/2016 8:33:35 AM</OutdoorsDate>
-      <Comment>W�chst nicht so gut.</Comment>
+      <SowingDate>2016-03-15T08:33:35.1178823+01:00</SowingDate>
+      <OutdoorsDate>2016-03-15T08:33:35.1178823+01:00</OutdoorsDate>
+      <Comment>Wächst nicht so gut.</Comment>
+      <HarvestData>
+        <HarvestModel>
+          <Date>2016-03-15T08:33:35.0933774+01:00</Date>
+          <Amount>5</Amount>
+        </HarvestModel>
+        <HarvestModel>
+          <Date>2016-03-15T08:33:35.1178823+01:00</Date>
+          <Amount>20</Amount>
+        </HarvestModel>
+      </HarvestData>
     </RealPlantModel>
     <RealPlantModel>
       <ID>55</ID>
       <RefID>1</RefID>
-      <SowingDate>3/15/2016 8:33:35 AM</SowingDate>
-      <OutdoorsDate>3/15/2016 8:33:35 AM</OutdoorsDate>
-      <Comment>W�chst gut.</Comment>
+      <SowingDate>2016-03-15T08:33:35.1178823+01:00</SowingDate>
+      <OutdoorsDate>2016-03-15T08:33:35.1178823+01:00</OutdoorsDate>
+      <Comment>Wächst gut.</Comment>
+      <HarvestData>
+        <HarvestModel>
+          <Date>2016-03-15T08:33:35.0933774+01:00</Date>
+          <Amount>4</Amount>
+        </HarvestModel>
+        <HarvestModel>
+          <Date>2016-03-15T08:33:35.1178823+01:00</Date>
+          <Amount>18</Amount>
+        </HarvestModel>
+      </HarvestData>
     </RealPlantModel>
   </RealPlants>
-  <HarvestData>
-    <RefID>1</RefID>
-    <Date>2016-03-15T08:33:35.0933774+01:00</Date>
-    <Amount>4</Amount>
-  </HarvestData>
-  <HarvestData>
-    <RefID>1</RefID>
-    <Date>6/2/2016 7:09:39 PM</Date>
-    <Amount>0</Amount>
-  </HarvestData>
-</Content>
+</MainDataModel>
