@@ -25,7 +25,8 @@ namespace HotAndSpicy.Controllers
             {
                 Model = new Chili(),
                 OkCommand = new RelayCommand(ExecuteOkCommand),
-                CancelCommand = new RelayCommand(ExecuteCancelCommand)
+                CancelCommand = new RelayCommand(ExecuteCancelCommand),
+                Import = new RelayCommand(Import)
             };
 
             mView.DataContext = mViewModel;
@@ -113,10 +114,10 @@ namespace HotAndSpicy.Controllers
             }
         }
 
-        private void Import()
+        private void Import(object obj)
         {
             xmlView = new XmlAdd();
-
+            mView.Close();
             xmlView.ShowDialog();
         }
     }
